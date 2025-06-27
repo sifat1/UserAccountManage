@@ -6,7 +6,7 @@ using AccountManagement.Data.Models;
 using Microsoft.AspNetCore.Authorization;
 
 
-[Authorize(Roles = "Admin,Accountant")]
+[Authorize(Roles = "Admin")]
 public class DeleteAccountModel : PageModel
 {
     private readonly SqlService _sql;
