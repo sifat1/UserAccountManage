@@ -1,0 +1,31 @@
+@page
+@model CreateAccountModel
+@{
+    ViewData["Title"] = "Create Account";
+}
+<h2>Create Account</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Account Name</label>
+        <input asp-for="Input.AccountName" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Account Type</label>
+        <select asp-for="Input.AccountType" class="form-select">
+            <option>Group</option>
+            <option>Ledger</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Parent Account (optional)</label>
+        <select asp-for="Input.ParentId" class="form-select">
+            <option value="">-- None --</option>
+            @foreach (var acc in Model.Accounts)
+            {
+                <option value="@acc.AccountId">@acc.AccountName</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+</form>

@@ -1,0 +1,16 @@
+@page "{id:int}"
+@model DeleteAccountModel
+@{
+    ViewData["Title"] = "Delete Account";
+}
+<h2>Delete Account</h2>
+
+<div class="alert alert-warning">
+    Are you sure you want to delete the account <strong>@Model.Input.AccountName</strong>?
+</div>
+
+<form method="post">
+    <input type="hidden" asp-for="Input.AccountId" />
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+</form>

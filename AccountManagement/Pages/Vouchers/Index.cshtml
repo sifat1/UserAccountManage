@@ -1,0 +1,39 @@
+@page
+@model VouchersIndexModel
+@{
+    Layout = "Shared/_Layout";
+    ViewData["Title"] = "Vouchers List";
+}
+
+<h2>Vouchers</h2>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Voucher ID</th>
+        <th>Type</th>
+        <th>Reference No</th>
+        <th>Date</th>
+        <th>Entries</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var voucher in Model.Vouchers)
+    {
+        <tr>
+            <td>@voucher.VoucherId</td>
+            <td>@voucher.VoucherType</td>
+            <td>@voucher.ReferenceNo</td>
+            <td>@voucher.VoucherDate.ToShortDateString()</td>
+            <td>
+                <ul>
+                    @foreach (var entry in voucher.Entries)
+                    {
+                        <li>@entry.AccountName: Debit @entry.Debit, Credit @entry.Credit</li>
+                    }
+                </ul>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

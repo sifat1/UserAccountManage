@@ -1,0 +1,60 @@
+@page
+@model CreateVoucherModel
+@using AccountingSystem.Models
+@{
+    Layout = "Shared/_Layout";
+    ViewData["Title"] = "Create Voucher";
+}
+
+<div class="container my-5">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h2 class="mb-4 text-primary">Create Voucher</h2>
+            <form method="post">
+                <div class="mb-3">
+                    <label class="form-label">Voucher Type</label>
+                    <select asp-for="Input.VoucherType" class="form-select">
+                        <option>Journal</option>
+                        <option>Payment</option>
+                        <option>Receipt</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Reference No</label>
+                    <input asp-for="Input.ReferenceNo" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Date</label>
+                    <input asp-for="Input.VoucherDate" type="date" class="form-control" />
+                </div>
+
+                <h5 class="mt-4">Entries</h5>
+                <div id="entries">
+                    @for (int i = 0; i < Model.Input.Entries.Count; i++)
+                    {
+                        <div class="row mb-2 gx-2">
+                            <div class="col-md-4">
+                                <select name="Input.Entries[@i].AccountId" class="form-select">
+                                    @foreach (var acc in Model.Accounts)
+                                    {
+                                        <option value="@acc.AccountId">@acc.AccountName</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input name="Input.Entries[@i].Debit" class="form-control" placeholder="Debit" />
+                            </div>
+                            <div class="col-md-4">
+                                <input name="Input.Entries[@i].Credit" class="form-control" placeholder="Credit" />
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-3">Save Voucher</button>
+            </form>
+        </div>
+    </div>
+</div>

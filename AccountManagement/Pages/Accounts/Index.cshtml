@@ -1,0 +1,27 @@
+@page
+@model AccountsIndexModel
+@{
+    ViewData["Title"] = "Chart of Accounts";
+}
+
+<h2>Chart of Accounts</h2>
+<a class="btn btn-primary mb-3" asp-page="/Accounts/Create">Add New Account</a>
+
+@foreach (var parent in Model.Accounts.Where(a => a.ParentId == null))
+{
+    <div class="mb-2">
+        <strong>@parent.AccountName</strong> -
+        <a asp-page="Edit" asp-route-id="@parent.AccountId">Edit</a> |
+        <a asp-page="Delete" asp-route-id="@parent.AccountId">Delete</a>
+        <ul>
+            @foreach (var child in Model.Accounts.Where(c => c.ParentId == parent.AccountId))
+            {
+                <li>
+                    @child.AccountName -
+                    <a asp-page="Edit" asp-route-id="@child.AccountId">Edit</a> |
+                    <a asp-page="Delete" asp-route-id="@child.AccountId">Delete</a>
+                </li>
+            }
+        </ul>
+    </div>
+}

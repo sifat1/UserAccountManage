@@ -1,0 +1,34 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using AccountingSystem.Models;
+using AccountingSystem.Services;
+using System.Data.SqlClient;
+using Microsoft.AspNetCore.Authorization;
+
+[Authorize(Roles = "Admin")]
+public class DeleteAccountModel : PageModel
+{
+    private readonly SqlService _sql;
+
+    [BindProperty]
+    public ChartOfAccount Input { get; set; }
+
+    public DeleteAccountModel(SqlService sql) => _sql = sql;
+
+    public void OnGet(int id)
+    {
+        var result = _sql.ExecuteReader<ChartOfAccount>("sp_ManageChartOfAccounts",
+            new SqlParameter("@Action", "SELECT"));
+
+        Input = result.FirstOrDefault(a => a.AccountId == id);
+    }
+
+    public IActionResult OnPost()
+    {
+        _sql.ExecuteNonQuery("sp_ManageChartOfAccounts",
+            new SqlParameter("@Action", "DELETE"),
+            new SqlParameter("@AccountId", Input.AccountId));
+
+        return RedirectToPage("/Accounts/Index");
+    }
+}

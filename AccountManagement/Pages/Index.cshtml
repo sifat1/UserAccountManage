@@ -1,0 +1,14 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <p>Manage your chart of accounts and vouchers efficiently.</p>
+
+    <div class="mt-4 d-grid gap-2 d-md-block">
+        <a class="btn btn-primary btn-lg me-2" asp-page="/Account/Login">Login</a>
+        <a class="btn btn-outline-primary btn-lg" asp-page="/Account/Register">Register</a>
+    </div>
+</div>

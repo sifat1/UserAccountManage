@@ -1,0 +1,7 @@
+﻿services:
+  accountmanagement:
+    image: accountmanagement
+    build:
+      context: .
+      dockerfile: AccountManagement/Dockerfile
+

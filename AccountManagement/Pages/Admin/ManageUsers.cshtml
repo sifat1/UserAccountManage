@@ -1,0 +1,29 @@
+@page
+@model ManageUsersModel
+
+@{
+    Layout = "Shared/_Layout";
+    ViewData["Title"] = "Manage Users";
+}
+<h2>Manage Users</h2>
+<table class="table">
+    <thead><tr><th>Email</th><th>Roles</th><th>Actions</th></tr></thead>
+    <tbody>
+    @foreach (var user in Model.Users)
+    {
+        <tr>
+            <td>@user.Email</td>
+            <td>@string.Join(", ", await Model.UserManager.GetRolesAsync(user))</td>
+            <td>
+                <form method="post">
+                    <input type="hidden" name="userId" value="@user.Id" />
+                    <select name="role">
+                        <option>Admin</option><option>Accountant</option><option>Viewer</option>
+                    </select>
+                    <button type="submit">Assign</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
