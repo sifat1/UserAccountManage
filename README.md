@@ -8,7 +8,16 @@ A C# project for managing user accounts, authentication, and authorization.
 - Role-based access control
 - Add account and transactions
 
-## Getting Started
+## Screenshots
+
+Here are some screenshots of the AccountManagement application:
+
+![Home](ss/1.png)
+![Login](ss/2.png)
+![ManageUsers](ss/3.png)
+![Vouchers](ss/4.png)
+![Accounts](ss/5.png)
+![Create Voucher](ss/6.png)
 
 1. **Clone the repository:**
     ```bash
