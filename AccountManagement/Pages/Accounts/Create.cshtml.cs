@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using Microsoft.AspNetCore.Authorization;
 
 
-
+[Authorize(Roles = "Admin,Accountant")]
 public class CreateAccountModel : PageModel
 {
     private readonly SqlService _sql;
