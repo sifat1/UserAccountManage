@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using AccountingSystem.Data;
-using AccountingSystem.Models;
+using AccountManagement.Data;
+using AccountManagement.Data.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

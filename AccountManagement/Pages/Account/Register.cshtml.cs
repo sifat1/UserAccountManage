@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using AccountingSystem.Models;
 using System.ComponentModel.DataAnnotations;
+using AccountManagement.Data.Models;
 
 public class RegisterModel : PageModel
 {

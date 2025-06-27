@@ -1,7 +1,9 @@
+using AccountManagement.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using AccountingSystem.Models;
+
+namespace AccountManagement.Pages.Account;
 
 public class LoginModel : PageModel
 {

@@ -1,4 +1,4 @@
-using AccountingSystem.Models;
+using AccountManagement.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Identity;

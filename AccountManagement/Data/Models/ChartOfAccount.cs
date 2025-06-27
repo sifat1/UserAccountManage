@@ -1,4 +1,4 @@
-namespace AccountingSystem.Models
+namespace AccountManagement.Data.Models
 {
     public class ChartOfAccount
     {

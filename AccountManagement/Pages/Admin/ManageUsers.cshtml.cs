@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using AccountingSystem.Models;
+using AccountManagement.Data.Models;
 using Microsoft.AspNetCore.Authorization;
 
 [Authorize(Roles = "Admin")]

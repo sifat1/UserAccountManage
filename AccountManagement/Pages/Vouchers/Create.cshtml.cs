@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using AccountingSystem.Services;
-using AccountingSystem.Models;
 using System.Data;
 using System.Data.SqlClient;
+using AccountManagement.Data.Models;
 using Microsoft.AspNetCore.Authorization;
 
 

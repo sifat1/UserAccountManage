@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using AccountingSystem.Models;
 using AccountingSystem.Services;
 using System.Data.SqlClient;
+using AccountManagement.Data.Models;
 
 public class VouchersIndexModel : PageModel
 {

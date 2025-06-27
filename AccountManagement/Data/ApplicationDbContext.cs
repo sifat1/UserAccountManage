@@ -1,8 +1,8 @@
+using AccountManagement.Data.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using AccountingSystem.Models;
 
-namespace AccountingSystem.Data
+namespace AccountManagement.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
